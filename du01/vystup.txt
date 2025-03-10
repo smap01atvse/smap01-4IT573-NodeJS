@@ -1,1 +1,1 @@
-Error: ENOENT: no such file or directory, open 'C:\Users\Patrik Šmátrala\Desktop\Node.js\du01\vstup.txt'
+lorem ipsum dolor set amet

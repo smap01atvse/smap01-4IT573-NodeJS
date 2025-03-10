@@ -1,27 +1,36 @@
-import fs from 'fs'
+import fs from "fs";
 
-fs.readFile("instrukce.txt", (err, data)=>{
-    if(err){
-        console.log(err)
-    }else{
-        const files=data.toString().split('\n');
-        files.forEach((filename)=>{
-            console.log(filename);
-            if(!fs.existsSync(filename)){
-                console.log(`Soubor ${filename} neexistuje`);
-                return;
-            }
-        })
+const filename = "instrukce.txt";
 
-        fs.readFile(files[0],(data,err)=>{
-            if(err){
-                console.log(err);
-                return;
-            }else{
-                fs.writeFile(files[1],data.toString(),()=>{
-                    console.log('File has been modified');
-                });
-            }
-        })
+function transcribeFile(filename) {
+  if (!fs.existsSync("instrukce.txt")) {
+    console.log(`Soubor ${filename} neexistuje`);
+    return;
+  }
+
+  fs.readFile(filename.trim(), (err, data) => {
+    if (err) {
+      console.log(err.toString());
+    } else {
+      const files = data.toString().split("\n");
+      
+      if(!fs.existsSync(files[0].trim())) {
+        console.log("Soubor "+files[0].trim()+" neexistuje");
+        return;
+      }
+
+      fs.readFile(files[0].trim(), (err, data) => {
+        if (err) {
+          console.log(err.toString());
+          return;
+        } else {
+          fs.writeFile(files[1].trim(), data.toString(), () => {
+            console.log("File has been modified");
+          });
+        }
+      });
     }
-})
+  });
+}
+
+transcribeFile(filename);
