@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todos <%= title.toUpperCase() %></h1>
+    <ul>
+        <%  for(const todo of todos){%>
+            <li>
+                <%= todo.title %>
+                <% if(todo.done){ %>
+                    <a href="/todos/<%= todo.id %>/toggle">dokončeno</a>
+                <% }else{ %>
+                    <a href="/todos/<%= todo.id %>/toggle">nedokončeno</a>
+                <% } %>
+                <a href="/todos/<%= todo.id %>/remove">Odstranit</a>
+            </li>
+        <% }; %>
+    </ul>
+    <form method="post" action="/todos">
+        <input type="text" name="title">
+        <button type="submit">Přidat TODO</button>
+    </form>
+</body>
+</html>

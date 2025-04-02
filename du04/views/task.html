@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail úkolu č. <%= todo.id %></title>
+</head>
+<body>
+    <h1><%= todo.title %></h1>
+    <h2>Stav: <b><%= (todo.done)?"Dokončeno":"Nedokončeno" %></b></h2>
+    <% if(todo.done){ %>
+        <a href="/todos/<%= todo.id %>/toggle">Změnit stav na nedokončeno</a>
+    <% }else{ %>
+        <a href="/todos/<%= todo.id %>/toggle">Změit stav na dokončeno</a>
+    <% } %>
+    <a href="/todos/<%= todo.id %>/remove">Odstranit</a>
+    <br>
+    <br>
+    <form action="/todos/<%= todo.id %>/rename" method="post">
+        <label for="newTitle">Nový název úkolu:</label>
+        <input type="text" id="newTitle" name="newTitle" value="<%= todo.title %>" required>
+        <button type="submit">Přejmenovat</button>
+    </form>
+    <br>
+    <a href="/">Zpět na úvodní stránku</a>
+</body>
+</html>
