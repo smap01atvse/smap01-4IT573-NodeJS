@@ -1,0 +1,22 @@
+{
+  "name": "du06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrik Šmátrala",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "@libsql/client": "^0.15.2",
+    "drizzle-kit": "^0.30.6",
+    "drizzle-orm": "^0.41.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "knex": "^3.1.0"
+  }
+}

@@ -1,0 +1,183 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh;
+    margin: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#login,
+#game {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 32px 40px;
+    margin-top: 60px;
+    min-width: 320px;
+    max-width: 90vw;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+input[type="text"] {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1em;
+    margin-bottom: 16px;
+    width: 80%;
+    max-width: 250px;
+}
+
+button {
+    background: #ffb300;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 8px 0 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background: #ffd54f;
+    transform: scale(1.05);
+}
+
+#options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 24px 0 0 0;
+}
+
+#options button {
+    min-width: 120px;
+    margin: 10px;
+    font-size: 1.2em;
+    background: #fff;
+    color: #2575fc;
+    border: 2px solid #2575fc;
+    border-radius: 16px;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+#options button:hover {
+    background: #2575fc;
+    color: #fff;
+    border-color: #fff;
+}
+
+#question {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+}
+
+#timer {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #ffb300;
+}
+
+#result,
+#score {
+    margin-top: 18px;
+    font-size: 1.1em;
+}
+
+#players {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #ffd54f;
+}
+
+#login-error {
+    margin-top: 10px;
+    color: #ff5252;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.leaderboard h1 {
+    margin-bottom: 24px;
+    color: #4a148c;
+    font-size: 2.2em;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1em;
+}
+
+.leaderboard-table th {
+    background: #ede7f6;
+    color: #4a148c;
+}
+
+.leaderboard-table tr:nth-child(3n) td {
+    font-weight: bold;
+    color: #388e3c;
+    background: #e8f5e9;
+}
+
+.leaderboard-table tr:nth-child(3n+1) td {
+    color: #1976d2;
+    background: #e3f2fd;
+}
+
+.leaderboard-table tr:nth-child(3n+2) td {
+    color: #fbc02d;
+    background: #fffde7;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 24px;
+    background: #4a148c;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background: #7c43bd;
+}

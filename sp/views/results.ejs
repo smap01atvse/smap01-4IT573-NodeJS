@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Výsledky kvízu – Leaderboard</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <div class="leaderboard">
+    <h1>Výsledky kvízu</h1>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Kdy</th>
+          <th>Hráči</th>
+          <th>Skóre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (leaderboard && leaderboard.length > 0) { %>
+          <% leaderboard.forEach(function(game) { %>
+            <tr>
+              <td><%= new Date(game.created_at).toLocaleDateString('cs-CZ') %></td>
+              <td>
+                <% try { %>
+                  <% JSON.parse(game.players).forEach(function(nick, idx) { %>
+                    <div><%= nick %></div>
+                  <% }) %>
+                <% } catch(e) { %>
+                  <em>Chyba ve formátu hráčů</em>
+                <% } %>
+              </td>
+              <td>
+                <% try { %>
+                  <% JSON.parse(game.scores).forEach(function(score, idx) { %>
+                    <div><%= score %></div>
+                  <% }) %>
+                <% } catch(e) { %>
+                  <em>Chyba ve formátu skóre</em>
+                <% } %>
+              </td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr><td colspan="3">Žádné výsledky zatím nejsou k dispozici.</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+    <a href="/" class="back-btn">Zpět na hlavní menu</a>
+  </div>
+</body>
+</html>
